@@ -197,13 +197,6 @@
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <7 9>;
         };
-
-        toggle_gaming {
-            bindings = <&tog 7>;
-            key-positions = <0 38>;
-            layers = <0 6>;
-            timeout-ms = <0>;
-        };
     };
 
     //
@@ -290,7 +283,7 @@
             bindings = <
 &trans  &trans  &trans          &trans          &trans           &msc SCRL_UP      &trans  &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans          &mmv MOVE_UP    &trans           &msc SCRL_DOWN    &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans            &trans  &trans     &trans     &trans  &trans  &trans
+&to 6   &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans            &trans  &trans     &trans     &trans  &trans  &trans
                                 &trans          &trans           &trans            &trans  &trans     &trans
             >;
         };
@@ -300,7 +293,7 @@
 &kp ESC  &kp TAB    &kp Q  &kp W     &kp E  &kp R        &trans  &trans  &trans  &trans  &trans  &trans
 &kp G    &kp LCTRL  &kp A  &kp S     &kp D  &kp F        &trans  &trans  &trans  &trans  &trans  &trans
 &kp B    &kp LSHFT  &kp Z  &kp X     &kp C  &kp V        &trans  &trans  &trans  &trans  &trans  &trans
-                           &kp LALT  &sl 7  &kp SPACE    &trans  &trans  &trans
+                           &kp LALT  &sl 7  &kp SPACE    &to 0   &trans  &trans
             >;
         };
 
