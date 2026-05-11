@@ -187,6 +187,23 @@
             bindings = <&kp GREATER_THAN>;
             key-positions = <31 34>;
         };
+
+        left_brace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <7 8>;
+        };
+
+        right_brace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <7 9>;
+        };
+
+        toggle_gaming {
+            bindings = <&tog 7>;
+            key-positions = <0 38>;
+            layers = <0 6>;
+            timeout-ms = <0>;
+        };
     };
 
     //
@@ -240,19 +257,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans      &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
-&caps_word  &trans    &trans          &kp UP_ARROW    &trans           &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
-&caps       &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
-                                      &kp LGUI        &mo 4            &kp SPACE    &kp RET    &trans     &trans
+&trans      &kp EXCL  &kp AT    &kp HASH      &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK         &kp LEFT_PARENTHESIS  &kp RPAR  &trans
+&caps_word  &trans    &kp FSLH  &kp QUESTION  &kp GRAVE  &trans       &kp MINUS  &kp EQUAL  &kp LEFT_BRACE    &kp RIGHT_BRACE       &kp BSLH  &trans
+&caps       &trans    &kp BSLH  &kp PIPE      &kp TILDE  &trans       &kp UNDER  &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET     &kp PIPE  &trans
+                                &kp LGUI      &mo 4      &kp SPACE    &kp RET    &trans     &trans
             >;
         };
 
         NUM {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8  &kp N9  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp N0  &kp N4  &kp N5  &kp N6  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp N0  &kp N1  &kp N2  &kp N3  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0     &trans
+&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &kp N0  &kp N4  &kp N5  &kp N6  &kp COLON  &trans
+&trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &kp N0  &kp N1  &kp N2  &kp N3  &kp DOT    &trans
+                        &trans  &trans  &trans     &trans  &trans  &trans
             >;
 
             label = "Numbers";
@@ -261,8 +278,8 @@
         ADJ {
             display-name = "System";
             bindings = <
-&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &trans        &trans        &trans        &trans      &trans            &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &trans        &trans        &trans        &trans      &studio_unlock    &trans  &trans  &trans  &trans  &trans       &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
                                     &trans        &trans      &trans            &trans  &trans  &trans
             >;
@@ -275,6 +292,24 @@
 &trans  &trans  &trans          &mmv MOVE_UP    &trans           &msc SCRL_DOWN    &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
 &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans            &trans  &trans     &trans     &trans  &trans  &trans
                                 &trans          &trans           &trans            &trans  &trans     &trans
+            >;
+        };
+
+        Gaming {
+            bindings = <
+&kp ESC  &kp TAB    &kp Q  &kp W     &kp E  &kp R        &trans  &trans  &trans  &trans  &trans  &trans
+&kp G    &kp LCTRL  &kp A  &kp S     &kp D  &kp F        &trans  &trans  &trans  &trans  &trans  &trans
+&kp B    &kp LSHFT  &kp Z  &kp X     &kp C  &kp V        &trans  &trans  &trans  &trans  &trans  &trans
+                           &kp LALT  &sl 7  &kp SPACE    &trans  &trans  &trans
+            >;
+        };
+
+        Gaming2 {
+            bindings = <
+&kp APOS   &kp F1  &kp F2  &kp F3     &kp F4     &kp F5     &trans  &trans  &trans  &trans  &trans  &trans
+&kp COMMA  &kp M   &kp Y   &kp T      &kp I      &kp F      &trans  &trans  &trans  &trans  &trans  &trans
+&kp DOT    &kp N1  &kp N2  &kp N3     &kp N4     &kp N5     &trans  &trans  &trans  &trans  &trans  &trans
+                           &kp MINUS  &kp LSHFT  &kp RET    &trans  &trans  &trans
             >;
         };
     };
